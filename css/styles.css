@@ -41,6 +41,7 @@ p {
 a {
   text-decoration: none;
   color: #999;
+  transition: all .5s;
 }
 a:hover {
   color: #6633ff;
@@ -50,8 +51,6 @@ a:hover {
 
 header {
   text-align: center;
-  background-size: cover;
-  overflow: hidden;
   padding-top: 20px;
 }
 
@@ -100,24 +99,21 @@ header {
 }
 
 .profile {
+  margin: 5% 1%;
+  padding: 10px;
   margin-bottom: 50px;
 }
 
 .profile-image {
-  padding: 30px;
+  padding: 20px;
   max-width: 90%; 
   margin: auto;
   transition: all .5s;
 }
 
 .profile-image:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: all .5s;
-}
-
-.intro {
-  margin: 5% 1%;
-  padding: 10px;
 }
 
   main {
@@ -126,7 +122,7 @@ header {
   }
 
 .card {
-  margin: 5% 1%;
+  margin: 5% auto;
   padding: 10px;
   max-width: 500px;
   text-align: center;
@@ -171,25 +167,30 @@ header {
   margin: 5px 0 5px 15%;
   font-weight: bold;
   transform: rotate(7deg);
-  border: 1px solid #999;
+  box-shadow: 1px 1px 5px 1px rgba(100,100,100,.3);
 }
 
 .skills li:nth-child(odd) {
   color: #E0AB26;
   margin: 5px 15% 5px 0px;
-  transform: rotate(-7deg);
+  transform: rotate(-5deg);
 }
 
 .foot-nav .nav a {
   margin: 0px;
   padding: 0;
   background: inherit;
+  transition: all .5s;
 }
 
 footer {
   width: 90%;
   min-height: 30px;
   padding-top: 30px;
+}
+
+footer p {
+  margin: 1em auto;
 }
 
 .phone a, .email a {
@@ -206,22 +207,34 @@ footer {
   margin-top: 60px;
 }
 
+.foot-nav .nav {
+  float: right;
+  padding: 0;
+}
+
+.foot-nav .nav li {
+  padding: 0 0 0 20px;
+}
+
 .foot-nav .nav a {
   margin: 0px;
   padding: 0;
   background: inherit;
 }
 
+.foot-nav .nav a:hover {
+  color: #000;
+}
+
 .foot-nav .big-nav {
   display: none;
 }
 
-.foot-nav li {
-  float: right;
-}
-
 .foot-nav .name {
   float: left;
+  text-transform: none;
+  font-weight: normal;
+  margin: 10px 0;
 }
 
 .clearfix::after {
@@ -232,6 +245,10 @@ footer {
 
 /* Styles for tablet screens */
 @media screen and (min-width: 768px) {
+
+  .profile, #portfolio, .main-nav {
+    padding: 3% 5%;
+  }
   
   .flex {
       display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -239,14 +256,6 @@ footer {
       -ms-flex-pack: distribute;
       justify-content: space-around;
       margin: 0 auto;
-  }
-
-  header {
-    min-height: 470px;
-  }
-
-  .nav {
-    padding: 0 30px;
   }
 
   .nav li {
@@ -257,7 +266,22 @@ footer {
 
   .nav a {
   border-radius: 5px;
+  background: transparent;
 } 
+
+  .profile {
+    flex-direction: row-reverse;
+  }
+
+  .profile-image {
+      padding: 0;
+  }
+
+  .intro {
+      margin-right: 40px;
+      text-align: left;
+      margin-top: 0px;
+  }
 
   main p {
     line-height: 1.6em;
@@ -265,19 +289,33 @@ footer {
 
   #portfolio .card {
   flex-basis: 50%;
-}
+  margin: 0;
+  }
 
-  footer {
-    font-size: 1.3em;
-    margin: 40px auto;
+  .skills {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+
+  header, footer {
+    font-size: 1.2em;
   }
 
   .top-nav {
     display: none;
   }
+  
+  footer p {
+  max-width: 60%;
+  margin: 1em auto;
+  }
 
-  .big-nav {
+  .foot-nav .big-nav {
   display: inline-block;
+  }
+
+  .foot-nav .top-nav {
+  display: none;
   }
 
 }
@@ -286,6 +324,14 @@ footer {
 @media screen and (min-width: 1024px) {
   header, main, footer {
     max-width: 1000px;
+  }
+
+  .head-name {
+    float: left;
+  }
+
+  .main-nav .nav {
+    float: right;
   }
   #portfolio .card {
   flex-basis: 30%;
