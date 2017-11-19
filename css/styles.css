@@ -60,7 +60,7 @@ header {
 
 .head-name {
   padding: 0px;
-  margin-top: 20px;
+  margin-top: 14px;
   margin-bottom: 0px;
   line-height: 1.2em;
 }
@@ -243,7 +243,10 @@ footer p {
   clear: both;
 }
 
-/* Styles for tablet screens */
+/*****************
+Styles for tablets
+******************/
+
 @media screen and (min-width: 768px) {
 
   .profile, #portfolio, .main-nav {
@@ -259,7 +262,8 @@ footer p {
   }
 
   .nav li {
-  padding: 5px auto 10px auto;
+  padding-top: 5px; 
+  padding-bottom: 10px;
   display: inline-block;
   width: auto;
   }
@@ -285,6 +289,10 @@ footer p {
 
   main p {
     line-height: 1.6em;
+  }
+
+  #portfolio h2 {
+    margin-bottom: 40px;
   }
 
   #portfolio .card {
@@ -320,7 +328,10 @@ footer p {
 
 }
 
-/* Styles for desktop */
+/*****************
+Styles for desktop 
+******************/
+
 @media screen and (min-width: 1024px) {
   header, main, footer {
     max-width: 1000px;
@@ -332,7 +343,14 @@ footer p {
 
   .main-nav .nav {
     float: right;
+    margin: 0;
+    padding: 0;
   }
+
+  .profile, #portfolio, .main-nav {
+    padding: 3% 0%;
+  }
+  
   #portfolio .card {
   flex-basis: 30%;
   }
